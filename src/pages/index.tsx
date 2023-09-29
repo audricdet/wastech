@@ -1,9 +1,5 @@
-import Head from "next/head";
-import Link from "next/link";
-
-import { api } from "~/utils/api";
-import styles from "./index.module.css";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import Side from "~/component/sidebar";
 
 export default function Home() {
   const user = useUser()
@@ -11,8 +7,8 @@ export default function Home() {
     <>
       <div>
         {!user.isSignedIn && <SignInButton />}
-        {!!user.isSignedIn && <SignOutButton />}
       </div>
+    <Side/>
     </>
   );
 }
